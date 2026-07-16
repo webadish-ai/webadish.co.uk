@@ -19,14 +19,7 @@ export const SERVICE_ROUTES: RouteConfig[] = [
     label: 'WordPress Maintenance',
     priority: 0.9,
     changeFreq: 'monthly',
-    lastModified: '2026-06-28',
-  },
-  {
-    path: '/wordpress-maintenance-plans',
-    label: 'WordPress Maintenance Plans',
-    priority: 0.9,
-    changeFreq: 'monthly',
-    lastModified: '2026-04-11',
+    lastModified: '2026-07-16',
   },
   {
     path: '/hacked-website-recovery-uk',

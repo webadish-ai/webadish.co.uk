@@ -3,6 +3,8 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      // Consolidated maintenance cluster (2026-07): plans page merged into the hub
+      { source: '/wordpress-maintenance-plans', destination: '/wordpress-maintenance-uk', statusCode: 301 },
       // Legacy core pages
       { source: '/about', destination: '/about-webadish-web-agency', statusCode: 301 },
       { source: '/contact-webadish-web-design', destination: '/contact', statusCode: 301 },

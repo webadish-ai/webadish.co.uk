@@ -524,7 +524,7 @@ export default function Pricing() {
               {' '}service page.
             </p>
             <p style={{ marginTop: '1rem' }}>
-              <a href="/wordpress-maintenance-plans" style={{ color: 'var(--primary)', fontWeight: 700 }}>
+              <a href="/wordpress-maintenance-uk" style={{ color: 'var(--primary)', fontWeight: 700 }}>
                 Looking for affordable WordPress maintenance plans? Compare monthly care tiers here.
               </a>
             </p>

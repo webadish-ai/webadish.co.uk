@@ -177,7 +177,7 @@ export default function WordPressMaintenanceUK() {
               Transparent monthly WordPress maintenance plans built for different business needs. No setup fees, no long-term contracts.
             </p>
             <p style={{ marginTop: '1rem' }}>
-              <Link href="/wordpress-maintenance-plans" style={{ color: 'var(--primary)', fontWeight: 600 }}>
+              <Link href="/pricing" style={{ color: 'var(--primary)', fontWeight: 600 }}>
                 Compare all UK WordPress support plans and monthly pricing
               </Link>
             </p>
@@ -338,7 +338,19 @@ export default function WordPressMaintenanceUK() {
           <h2 style={{ marginBottom: '1.5rem' }}>Further Reading</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             <Link href="/wordpress-maintenance-service-uk-what-is-included-and-how-much-it-costs" style={{ color: 'var(--primary)', textDecoration: 'none', fontSize: '0.95rem' }}>
-              → WordPress Security Protection UK: What&apos;s Included &amp; How Much It Costs
+              → WordPress Maintenance Cost UK: What&apos;s Included &amp; What You Should Pay
+            </Link>
+            <Link href="/how-to-choose-wordpress-maintenance-service-uk" style={{ color: 'var(--primary)', textDecoration: 'none', fontSize: '0.95rem' }}>
+              → How to Choose a WordPress Maintenance Service UK: What Agencies Don&apos;t Tell You
+            </Link>
+            <Link href="/wordpress-care-plans-uk" style={{ color: 'var(--primary)', textDecoration: 'none', fontSize: '0.95rem' }}>
+              → WordPress Care Plans UK: What&apos;s Included and Which Plan Is Right for You
+            </Link>
+            <Link href="/wordpress-management-services-uk" style={{ color: 'var(--primary)', textDecoration: 'none', fontSize: '0.95rem' }}>
+              → WordPress Management Services UK: What&apos;s Included and Who Needs One
+            </Link>
+            <Link href="/wordpress-monitoring-uk" style={{ color: 'var(--primary)', textDecoration: 'none', fontSize: '0.95rem' }}>
+              → WordPress Monitoring UK: What to Monitor and Why Uptime Checks Aren&apos;t Enough
             </Link>
             <Link href="/wordpress-site-keeps-getting-hacked" style={{ color: 'var(--primary)', textDecoration: 'none', fontSize: '0.95rem' }}>
               → WordPress Site Keeps Getting Hacked? Here&apos;s Why &amp; How to Stop It

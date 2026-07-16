@@ -468,6 +468,9 @@ export default function HackedWebsiteRecoveryUK() {
         <div className="container">
           <h2 style={{ marginBottom: '1.5rem' }}>Further Reading</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <Link href="/wordpress-post-hack-security" style={{ color: '#ef4444', textDecoration: 'none', fontSize: '0.95rem' }}>
+              → WordPress Post-Hack Security: The 12 Steps That Stop the Second Hack
+            </Link>
             <Link href="/wordpress-site-keeps-getting-hacked" style={{ color: '#ef4444', textDecoration: 'none', fontSize: '0.95rem' }}>
               → WordPress Site Keeps Getting Hacked? Here&apos;s Why &amp; How to Stop It
             </Link>

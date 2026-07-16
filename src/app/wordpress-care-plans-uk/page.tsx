@@ -209,7 +209,7 @@ export default function WordPressCareePlansUKPage() {
       </p>
       <p>
         View our{' '}
-        <Link href="/wordpress-maintenance-plans">WordPress maintenance plans</Link> to see how WebAdish
+        <Link href="/wordpress-maintenance-uk">WordPress maintenance service</Link> to see how WebAdish
         structures coverage across different site types, or{' '}
         <Link href="/contact">get in touch</Link> if you are unsure which level is right for your
         situation.

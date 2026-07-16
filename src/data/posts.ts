@@ -10,6 +10,26 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'wordpress-post-hack-security',
+    title: 'WordPress Post-Hack Security: The 12 Steps That Stop the Second Hack',
+    excerpt:
+      'A malware cleanup removes the code that was found — it does not close the entry point or rotate the credentials the attacker holds. The 12 post-hack steps that decide whether you stay clean, in the order to do them.',
+    datePublished: '2026-07-16',
+    dateModified: '2026-07-16',
+    category: 'WordPress Security',
+    author: 'WebAdish',
+  },
+  {
+    slug: 'wordpress-monitoring-uk',
+    title: "WordPress Monitoring UK: What to Monitor and Why Uptime Checks Aren't Enough",
+    excerpt:
+      'Uptime checks miss the incidents that actually cost money — malware, blocklisting, silent form failures, expired certificates. The seven signals UK business sites should monitor, and who should respond when one fires.',
+    datePublished: '2026-07-16',
+    dateModified: '2026-07-16',
+    category: 'Maintenance',
+    author: 'WebAdish',
+  },
+  {
     slug: 'wordpress-security-audit-vs-malware-scan',
     title: "Why a Free Malware Scan Isn't a Security Audit: A Decision Guide for CTOs",
     excerpt:
@@ -201,11 +221,11 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'wordpress-maintenance-service-uk-what-is-included-and-how-much-it-costs',
-    title: "WordPress Maintenance Service UK: What's Included & How Much It Costs",
+    title: "WordPress Maintenance Cost UK: What's Included & What You Should Pay",
     excerpt:
-      "Everything UK businesses need to know about WordPress maintenance services — what's included, what it costs, and how to choose the right plan.",
+      'How much does WordPress maintenance cost in the UK? Typical prices from £100 to £1,000+/month, what each tier includes, and how to avoid overpaying.',
     datePublished: '2026-01-15',
-    dateModified: '2026-03-09',
+    dateModified: '2026-07-16',
     category: 'Maintenance',
     author: 'WebAdish',
   },

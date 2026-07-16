@@ -118,7 +118,7 @@ export default function WordPressSecurityRetainer() {
               </p>
               <h2 style={{ marginBottom: '0.75rem' }}>For businesses that need more than upkeep and want a named protection path</h2>
               <p style={{ color: '#d4d4d8', lineHeight: 1.7, marginBottom: '1rem' }}>
-                This page is for buyers who do not want security handled as an afterthought. A retainer gives you monitoring, prioritisation, escalation, and a clearer operating model when suspicious behaviour, risky plugin disclosures, or real incidents appear. If you want routine upkeep only, compare our <Link href="/wordpress-maintenance-plans" style={{ color: 'var(--primary)', fontWeight: 600 }}>maintenance plans</Link> instead.
+                This page is for buyers who do not want security handled as an afterthought. A retainer gives you monitoring, prioritisation, escalation, and a clearer operating model when suspicious behaviour, risky plugin disclosures, or real incidents appear. If you want routine upkeep only, compare our <Link href="/wordpress-maintenance-uk" style={{ color: 'var(--primary)', fontWeight: 600 }}>maintenance plans</Link> instead.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.55rem' }}>
                 {[
@@ -223,7 +223,7 @@ export default function WordPressSecurityRetainer() {
               It is a better fit when the site has meaningful commercial value, prior compromise history, sensitive user data, stakeholder pressure, or a plugin stack that changes often enough to create real risk. In other words, this is about security ownership without having to build an in-house WordPress security function.
             </p>
             <p style={{ color: '#a1a1aa', lineHeight: '1.8', margin: 0 }}>
-              If your main need is routine updates and backups, start with our <Link href="/wordpress-maintenance-plans" style={{ color: 'var(--primary)', fontWeight: 600 }}>maintenance plans</Link>. If the site is already compromised, start with <Link href="/hacked-website-recovery-uk" style={{ color: 'var(--primary)', fontWeight: 600 }}>hacked website recovery</Link>. A retainer sits in the middle: stronger than upkeep, more proactive than ad hoc emergency work.
+              If your main need is routine updates and backups, start with our <Link href="/wordpress-maintenance-uk" style={{ color: 'var(--primary)', fontWeight: 600 }}>maintenance plans</Link>. If the site is already compromised, start with <Link href="/hacked-website-recovery-uk" style={{ color: 'var(--primary)', fontWeight: 600 }}>hacked website recovery</Link>. A retainer sits in the middle: stronger than upkeep, more proactive than ad hoc emergency work.
             </p>
           </div>
         </div>
