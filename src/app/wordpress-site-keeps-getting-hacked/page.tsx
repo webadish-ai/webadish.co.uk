@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Site Keeps Getting Hacked? Why It Happens and How to Stop It',
+  title: 'WordPress Site Keeps Getting Hacked? How to Stop It for Good',
   description: 'If your WordPress site keeps getting hacked after cleanup, a backdoor or compromised hosting account is usually the cause. Learn how to stop repeat hacks permanently.',
   path: '/wordpress-site-keeps-getting-hacked',
   type: 'article',

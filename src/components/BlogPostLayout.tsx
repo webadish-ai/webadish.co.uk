@@ -133,6 +133,7 @@ export default function BlogPostLayout({
             }}
           >
             {[
+              { href: '/wordpress-security-scanner', label: 'Free WordPress Security Scan' },
               { href: '/hacked-website-recovery-uk', label: 'Hacked Website Recovery UK' },
               { href: '/wordpress-malware-removal', label: 'WordPress Malware Removal' },
               { href: '/wordpress-site-keeps-getting-hacked', label: 'Why Sites Keep Getting Hacked' },
@@ -166,11 +167,16 @@ export default function BlogPostLayout({
           }}>
             <h3 style={{ color: 'var(--foreground)', marginBottom: '0.75rem' }}>Need Help With WordPress Security?</h3>
             <p style={{ color: '#a1a1aa', marginBottom: '1.25rem' }}>
-              Get a professional security audit or speak to our team about protecting your WordPress site.
+              Run a free instant scan to check for malware and blacklisting, or speak to our team about protecting your WordPress site.
             </p>
-            <Link href="/contact" className="btn btn-primary">
-              Request a Security Review
-            </Link>
+            <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Link href="/wordpress-security-scanner" className="btn btn-primary">
+                Scan My Site Free
+              </Link>
+              <Link href="/contact" className="btn btn-secondary">
+                Request a Security Review
+              </Link>
+            </div>
           </div>
         )}
       </article>

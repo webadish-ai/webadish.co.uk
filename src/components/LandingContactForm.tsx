@@ -28,12 +28,14 @@ export default function LandingContactForm({
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     website: '',
     message: '',
     fax_number: '', // honeypot
     form_started_at: Date.now(),
     turnstile_token: '',
   });
+  const [errorText, setErrorText] = useState('');
   const [utmParams, setUtmParams] = useState<UTMParams>({
     utm_source: '',
     utm_medium: '',
@@ -81,8 +83,10 @@ export default function LandingContactForm({
     e.preventDefault();
     if (formData.fax_number) return; // honeypot
     trackFormStart();
+    setErrorText('');
 
     if (turnstileSiteKey && !formData.turnstile_token) {
+      setErrorText('Please complete the security check above, then submit again.');
       setStatus('error');
       return;
     }
@@ -92,7 +96,13 @@ export default function LandingContactForm({
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, website: normalizeWebsite(formData.website), ...utmParams }),
+        body: JSON.stringify({
+          ...formData,
+          website: normalizeWebsite(formData.website),
+          // /api/contact requires a message of 12+ chars; emergency visitors often skip it
+          message: formData.message.trim() || 'Emergency recovery request via landing page — no details provided.',
+          ...utmParams,
+        }),
       });
 
       if (res.ok) {
@@ -111,7 +121,7 @@ export default function LandingContactForm({
           medium: utmParams.utm_medium || 'none',
           campaign: utmParams.utm_campaign || 'none',
         });
-        setFormData({ name: '', email: '', website: '', message: '', fax_number: '', form_started_at: Date.now(), turnstile_token: '' });
+        setFormData({ name: '', email: '', phone: '', website: '', message: '', fax_number: '', form_started_at: Date.now(), turnstile_token: '' });
         setHasTrackedStart(false);
       } else {
         setStatus('error');
@@ -140,9 +150,28 @@ export default function LandingContactForm({
       }}>
         <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>&#10003;</div>
         <h3 style={{ color: 'var(--foreground)', marginBottom: '0.75rem' }}>Thank You!</h3>
-        <p style={{ color: '#a1a1aa' }}>
-          We&apos;ve received your request and will be in touch within 2 business hours.
+        <p style={{ color: '#a1a1aa', marginBottom: '1.5rem' }}>
+          We&apos;ve received your request. Triage begins within 30 minutes during active coverage hours.
         </p>
+        <p style={{ color: 'var(--foreground)', fontWeight: 600, marginBottom: '0.75rem', fontSize: '0.95rem' }}>
+          Site actively compromised? Use the fastest route:
+        </p>
+        <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <a
+            href="tel:+447344540450"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: '#ef4444', color: '#fff', fontWeight: 700, padding: '0.6rem 1.2rem', borderRadius: '0.5rem', fontSize: '0.9rem', textDecoration: 'none' }}
+          >
+            📞 Call Now
+          </a>
+          <a
+            href="https://wa.me/447344540450?text=I%20just%20submitted%20the%20recovery%20form%20and%20my%20site%20is%20actively%20compromised"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: '#16a34a', color: '#fff', fontWeight: 700, padding: '0.6rem 1.2rem', borderRadius: '0.5rem', fontSize: '0.9rem', textDecoration: 'none' }}
+          >
+            💬 WhatsApp
+          </a>
+        </div>
       </div>
     );
   }
@@ -209,6 +238,22 @@ export default function LandingContactForm({
             }}
           />
           <input
+            type="tel"
+            placeholder="Phone / WhatsApp (for fastest callback)"
+            value={formData.phone}
+            onFocus={trackFormStart}
+            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            autoComplete="tel"
+            style={{
+              background: 'var(--background)',
+              border: '1px solid var(--border)',
+              borderRadius: '8px',
+              padding: '0.85rem 1rem',
+              color: 'var(--foreground)',
+              fontSize: '0.95rem',
+            }}
+          />
+          <input
             type="text"
             inputMode="url"
             placeholder="Website URL (example.com)"
@@ -227,10 +272,8 @@ export default function LandingContactForm({
             }}
           />
           <textarea
-            placeholder="What would you like us to review or fix?"
-            required
-            minLength={12}
-            rows={4}
+            placeholder="What's happening with your site? (optional)"
+            rows={3}
             value={formData.message}
             onFocus={trackFormStart}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -261,7 +304,7 @@ export default function LandingContactForm({
         </div>
         {status === 'error' && (
           <p style={{ color: '#ef4444', marginTop: '0.75rem', fontSize: '0.9rem' }}>
-            Something went wrong. Please try again or email us at sales@webadish.co.uk.
+            {errorText || 'Something went wrong. Please try again or email us at sales@webadish.co.uk.'}
           </p>
         )}
       </form>

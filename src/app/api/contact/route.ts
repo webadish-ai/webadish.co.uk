@@ -421,7 +421,7 @@ export async function POST(request: Request) {
       bcc: ['dilipparmar@gmail.com'],
       replyTo: email,
       subject: `New contact form enquiry from ${name}${utmSource ? ` [${utmSource}]` : ''} [${submissionId}]`,
-      text: `Submission ID: ${submissionId}\nName: ${name}\nEmail: ${email}\nWebsite: ${website}\n\nMessage:\n${message}\n\nLead Attribution:\nLikely Channel: ${inferredChannel}\nSource: ${utmSource || 'direct'}\nMedium: ${utmMedium || 'none'}\nCampaign: ${utmCampaign || 'none'}${utmTerm ? `\nTerm: ${utmTerm}` : ''}${utmContent ? `\nContent: ${utmContent}` : ''}${gclid ? `\nGCLID: ${gclid}` : ''}\nLanding Page: ${landingPage || 'unknown'}\nReferrer: ${referrer || 'direct'}`,
+      text: `Submission ID: ${submissionId}\nName: ${name}\nEmail: ${email}${phone ? `\nPhone/WhatsApp: ${phone}` : ''}\nWebsite: ${website}\n\nMessage:\n${message}\n\nLead Attribution:\nLikely Channel: ${inferredChannel}\nSource: ${utmSource || 'direct'}\nMedium: ${utmMedium || 'none'}\nCampaign: ${utmCampaign || 'none'}${utmTerm ? `\nTerm: ${utmTerm}` : ''}${utmContent ? `\nContent: ${utmContent}` : ''}${gclid ? `\nGCLID: ${gclid}` : ''}\nLanding Page: ${landingPage || 'unknown'}\nReferrer: ${referrer || 'direct'}`,
       html: `
         <h2>New contact form enquiry</h2>
         <p><strong>Submission ID:</strong> ${escapeHtml(submissionId)}</p>

@@ -14,7 +14,7 @@ export default function HackedSiteLP() {
     {
       number: '1',
       title: 'Contact Us',
-      description: 'Call or submit the form. We respond within 30 minutes during business hours.',
+      description: 'Call or submit the form. Triage begins within 30 minutes during active coverage hours.',
     },
     {
       number: '2',

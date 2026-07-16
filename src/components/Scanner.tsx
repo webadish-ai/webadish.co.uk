@@ -273,6 +273,60 @@ export default function Scanner() {
             </div>
           )}
 
+          {/* Clean result: report-by-email capture (non-blocking — findings already shown) */}
+          {result && issues === 0 && !unlocked && (
+            <div style={panel({ padding: '1.6rem' })}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+                <ShieldCheck size={18} color="#34d399" />
+                <h2 style={{ fontSize: '1.2rem', fontWeight: 700, margin: 0 }}>Get this report by email — plus what a homepage scan can&apos;t see</h2>
+              </div>
+              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', margin: '0.4rem 0 1.1rem' }}>
+                A clean homepage scan doesn&apos;t mean the server, plugins, or admin accounts are clean. We&apos;ll email your full report with the deeper checks worth running before an attacker does.
+              </p>
+              <form onSubmit={handleLead} style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
+                <input type="email" required value={leadEmail} onChange={(e) => setLeadEmail(e.target.value)} placeholder="you@yourbusiness.co.uk" autoComplete="email"
+                  style={{ flex: '1 1 200px', background: '#fff', color: '#0f172a', border: 'none', borderRadius: 10, padding: '0.7rem 0.9rem', fontSize: '0.9rem' }} />
+                <input type="tel" value={leadPhone} onChange={(e) => setLeadPhone(e.target.value)} placeholder="Phone (optional)" autoComplete="tel"
+                  style={{ flex: '1 1 140px', background: '#fff', color: '#0f172a', border: 'none', borderRadius: 10, padding: '0.7rem 0.9rem', fontSize: '0.9rem' }} />
+                {/* honeypot */}
+                <input type="text" tabIndex={-1} autoComplete="off" value={leadCompany} onChange={(e) => setLeadCompany(e.target.value)}
+                  name="fax_number" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }} />
+                <button type="submit" disabled={leadSubmitting}
+                  style={{ background: '#6366f1', color: '#fff', fontWeight: 700, border: 'none', borderRadius: 10, padding: '0.7rem 1.2rem', fontSize: '0.9rem', cursor: 'pointer', opacity: leadSubmitting ? 0.7 : 1, whiteSpace: 'nowrap' }}>
+                  {leadSubmitting ? 'Sending…' : 'Email My Report'}
+                </button>
+              </form>
+              {leadError && <p style={{ color: '#fca5a5', fontSize: '0.85rem', marginTop: '0.7rem' }}>{leadError}</p>}
+              <p style={{ color: '#64748b', fontSize: '0.72rem', marginTop: '0.7rem' }}>We email your report and may follow up to help. No spam.</p>
+            </div>
+          )}
+          {result && issues === 0 && unlocked && (
+            <div style={panel({ padding: '1.4rem', textAlign: 'center' })}>
+              <p style={{ color: '#34d399', fontWeight: 700, margin: '0 0 0.3rem' }}>Report sent — check your inbox.</p>
+              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.88rem', margin: 0 }}>Reply to that email any time to talk to a human about hardening your site.</p>
+            </div>
+          )}
+
+          {/* Clean result: prevention CTA */}
+          {result && issues === 0 && (
+            <div style={{ background: 'linear-gradient(135deg, #065f46, #064e3b)', borderRadius: 16, padding: '1.8rem', textAlign: 'center' }}>
+              <h2 style={{ fontSize: '1.3rem', fontWeight: 700, margin: '0 0 0.5rem' }}>Clean today. Keep it that way.</h2>
+              <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.9rem', maxWidth: '30rem', margin: '0 auto 1.3rem' }}>
+                Most hacked sites were &quot;fine&quot; until a plugin vulnerability landed. Monthly protection covers updates, daily monitoring, and priority emergency response if anything gets through.
+              </p>
+              <div style={{ display: 'flex', gap: '0.7rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <a href="/wordpress-security-retainer" onClick={() => trackEvent('scanner_cta_click', { target: '/wordpress-security-retainer', infected: false })}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#22c55e', color: '#fff', fontWeight: 700, textDecoration: 'none', padding: '0.7rem 1.4rem', borderRadius: 12 }}>
+                  View Protection Retainers
+                </a>
+                <a href="/wordpress-maintenance-uk" onClick={() => trackEvent('scanner_cta_click', { target: '/wordpress-maintenance-uk', infected: false })}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'rgba(255,255,255,0.12)', color: '#fff', fontWeight: 700, textDecoration: 'none', padding: '0.7rem 1.4rem', borderRadius: 12 }}>
+                  Maintenance Plans <ArrowRight size={16} />
+                </a>
+              </div>
+            </div>
+          )}
+
           {/* Recovery CTA */}
           {showFindings && issues > 0 && (
             <div style={{ background: 'linear-gradient(135deg, #4338ca, #312e81)', borderRadius: 16, padding: '1.8rem', textAlign: 'center' }}>

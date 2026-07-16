@@ -20,6 +20,8 @@ United Kingdom
 
 ## Contact
 - Email: sales@webadish.co.uk
+- Phone: +44 7344 540450
+- WhatsApp: https://wa.me/447344540450
 - Website: https://www.webadish.co.uk
 
 ## Key Pages
@@ -29,7 +31,16 @@ United Kingdom
 - Hacked Site Recovery: https://www.webadish.co.uk/hacked-website-recovery-uk
 - Malware Removal: https://www.webadish.co.uk/wordpress-malware-removal
 - Security Retainer: https://www.webadish.co.uk/wordpress-security-retainer
+- Free Security Scanner: https://www.webadish.co.uk/wordpress-security-scanner
+- WooCommerce Hacked Recovery: https://www.webadish.co.uk/woocommerce-store-hacked-recovery
+- Google Blacklist Recovery: https://www.webadish.co.uk/wordpress-blacklisted-by-google
+- Partner Programme: https://www.webadish.co.uk/partners
 - Pricing: https://www.webadish.co.uk/pricing
 - Case Studies: https://www.webadish.co.uk/case-studies
 - Blog: https://www.webadish.co.uk/blog
-- Contact: https://www.webadish.co.uk/contact-webadish-web-design
+- Contact: https://www.webadish.co.uk/contact
+
+## Emergency Landing Pages
+- Hacked Site Fix Landing Page: https://www.webadish.co.uk/lp/hacked-site-fix
+- WordPress Security Audit Landing Page: https://www.webadish.co.uk/lp/wordpress-security-audit
+- WordPress Maintenance Landing Page: https://www.webadish.co.uk/lp/wordpress-maintenance

@@ -30,7 +30,7 @@ export default function Home() {
     {
       question: 'Which recovery option do most businesses choose?',
       answer:
-        'Most commercial websites choose the Incident Response Program because it combines deep forensic investigation, root-cause remediation, and post-recovery monitoring to reduce the chance of repeat compromise.',
+        'Most commercial websites choose Fixed-Fee Forensic Recovery because it combines deep forensic investigation, root-cause remediation, and post-recovery monitoring to reduce the chance of repeat compromise. Small and brochure sites start with Emergency Malware Removal from £299.',
     },
     {
       question: 'Who is this service for?',
@@ -59,13 +59,52 @@ export default function Home() {
         showImage={false}
       />
 
+      {/* Above-fold pricing + emergency CTA strip — mirrors /hacked-website-recovery-uk */}
+      <section style={{ backgroundColor: 'var(--surface)', borderBottom: '1px solid var(--border)', padding: '1.25rem 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center' }}>
+              <div>
+                <span style={{ color: '#4ade80', fontWeight: 800, fontSize: '1.25rem' }}>From £299</span>
+                <span style={{ color: '#a1a1aa', fontSize: '0.9rem', marginLeft: '0.5rem' }}>small-site cleanup · 30-day guarantee</span>
+              </div>
+              <div style={{ color: '#a1a1aa', fontSize: '0.9rem' }}>
+                <span style={{ color: '#e4e4e7', fontWeight: 600 }}>£1,499</span> business forensic · <span style={{ color: '#e4e4e7', fontWeight: 600 }}>No recovery, no invoice</span>
+              </div>
+            </div>
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <a
+                href="tel:+447344540450"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: '#ef4444', color: '#fff', fontWeight: 700, padding: '0.55rem 1.1rem', borderRadius: '0.5rem', fontSize: '0.9rem', textDecoration: 'none' }}
+              >
+                📞 Call Now
+              </a>
+              <a
+                href="https://wa.me/447344540450?text=My%20website%20has%20been%20hacked%20and%20I%20need%20urgent%20help"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: '#16a34a', color: '#fff', fontWeight: 700, padding: '0.55rem 1.1rem', borderRadius: '0.5rem', fontSize: '0.9rem', textDecoration: 'none' }}
+              >
+                💬 WhatsApp
+              </a>
+              <Link
+                href="/wordpress-security-scanner"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.4)', color: '#a5b4fc', fontWeight: 700, padding: '0.55rem 1.1rem', borderRadius: '0.5rem', fontSize: '0.9rem', textDecoration: 'none' }}
+              >
+                🔎 Free Instant Scan
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <TrustSignals />
 
       <section className={`${styles.highTicketSection} section-padding`}>
         <div className="container">
           <div className={styles.sectionHeader}>
             <h2>For businesses where downtime, data loss, and security failure are not acceptable.</h2>
-            <p>Response within 30 minutes for urgent assessments.</p>
+            <p>Triage begins within 30 minutes during active coverage hours.</p>
             <p>Led by 20+ years of experience in infrastructure, cybersecurity, and enterprise systems.</p>
           </div>
         </div>
@@ -185,39 +224,40 @@ export default function Home() {
           </div>
           <div className={styles.highTicketGrid}>
             <article className={styles.highlightCard}>
-              <h3>Emergency Containment</h3>
-              <p><strong>From £1,500</strong></p>
-              <p>For non-critical websites needing immediate cleanup.</p>
+              <h3>Emergency Malware Removal</h3>
+              <p><strong>From £299</strong></p>
+              <p>For small and brochure WordPress sites needing fixed-fee cleanup.</p>
               <p>Malware removal</p>
-              <p>Site restoration</p>
+              <p>Google blacklist removal support</p>
               <p>Basic hardening</p>
-              <p><strong>Does not include deep forensic investigation.</strong></p>
+              <p>30-day reinfection guarantee</p>
+              <p><strong>Fixed fee. No recovery, no invoice.</strong></p>
             </article>
             <article className={styles.highlightCard}>
               <div className={styles.planLabel}>Most clients choose this</div>
-              <h3>Incident Response Program</h3>
-              <p><strong>£3,000 – £8,000</strong></p>
-              <p>Complete recovery and protection against reinfection.</p>
+              <h3>Fixed-Fee Forensic Recovery</h3>
+              <p><strong>From £1,499</strong></p>
+              <p>Complete recovery and protection against reinfection for business sites.</p>
               <p>Deep forensic investigation</p>
               <p>Root cause identification</p>
               <p>Full malware &amp; backdoor removal</p>
               <p>Database and file integrity validation</p>
               <p>Hosting, DNS, and access audit</p>
               <p>Advanced security hardening</p>
-              <p>60-day monitoring &amp; support</p>
+              <p>Post-recovery monitoring &amp; support</p>
               <p><strong>Most businesses choose this to avoid repeat attacks.</strong></p>
             </article>
             <article className={styles.highlightCard}>
               <div className={styles.planLabelCritical}>For business-critical systems</div>
-              <h3>Business Continuity Protection</h3>
-              <p><strong>£8,000 – £12,000+</strong></p>
-              <p>For businesses that cannot afford another incident.</p>
-              <p>Everything in Incident Response</p>
+              <h3>Business-Critical Response</h3>
+              <p><strong>£3,000 – £12,000+</strong></p>
+              <p>For revenue-critical sites, multi-site estates, and major incidents.</p>
+              <p>Post-hack forensic &amp; hardening package</p>
+              <p>Breach autopsy and vector closure</p>
               <p>Disaster recovery architecture</p>
               <p>Advanced monitoring &amp; alerting</p>
-              <p>Multi-layer security implementation</p>
-              <p>Backup system redesign</p>
               <p>Team access &amp; workflow security</p>
+              <p>12-month protection roadmap</p>
               <p>SLA-backed emergency response</p>
               <p><strong>Designed for eCommerce, agencies &amp; high-revenue sites.</strong></p>
             </article>
@@ -322,13 +362,13 @@ export default function Home() {
           <div className={styles.processContent}>
             <h2>Who this is for</h2>
             <ul className={styles.benefitsList}>
+              <li>Small business and brochure sites needing fixed-fee emergency cleanup</li>
               <li>Businesses generating revenue through their website</li>
               <li>eCommerce and membership platforms</li>
               <li>Agencies managing client websites</li>
               <li>Companies where downtime has real financial impact</li>
             </ul>
-            <p><strong>Not suitable for hobby sites or low-risk projects.</strong></p>
-            <p>We selectively work with clients where the business impact justifies proper security handling.</p>
+            <p><strong>From £299 small-site cleanups to major incident engagements — every tier is root-cause-led, not a surface malware sweep.</strong></p>
           </div>
         </div>
       </section>
@@ -356,7 +396,7 @@ export default function Home() {
 
       <CTA
         title="Every hour increases risk, damage, and recovery cost."
-        subtitle="Request Emergency Assessment Now. Response within 30 minutes."
+        subtitle="Request Emergency Assessment Now. Triage begins within 30 minutes during active coverage hours."
         btnText="Request Emergency Assessment Now"
         btnLink="/contact"
       />

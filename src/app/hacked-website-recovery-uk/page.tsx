@@ -17,11 +17,11 @@ import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Hacked Website Repair & Recovery UK | 30-Min Triage',
+  title: 'Fix Hacked WordPress Site UK | Repair From £299 · 30-Min Triage',
   description:
-    'Hacked WordPress site? UK team begins triage in 30 mins. Emergency malware removal & forensic recovery services. No recovery, no fee. Call or WhatsApp now!',
+    'Hacked WordPress site? UK team responds in 30 mins — malware removed, backdoors closed, most sites restored within 24h. From £299, no recovery no fee. Call or WhatsApp now.',
   path: '/hacked-website-recovery-uk',
-  modifiedTime: '2026-06-28',
+  modifiedTime: '2026-07-15',
 });
 
 const faqItems = [

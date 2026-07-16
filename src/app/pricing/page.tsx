@@ -601,7 +601,7 @@ export default function Pricing() {
       <div id="assessment-cta">
         <CTA
           title="Every hour increases damage."
-          subtitle="Request Emergency Assessment. Response within 30 minutes."
+          subtitle="Request Emergency Assessment. Triage begins within 30 minutes during active coverage hours."
           btnText="Request Emergency Assessment"
           btnLink="/contact"
         />

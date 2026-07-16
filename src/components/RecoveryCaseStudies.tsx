@@ -37,9 +37,17 @@ const RecoveryCaseStudies = () => {
           </p>
           <h2 style={{ marginBottom: '0.5rem' }}>Recovery work we have actually delivered</h2>
           <p style={{ color: '#a1a1aa' }}>
-            Not theoretical checklists. These are live business sites where we
-            traced the root cause, removed the foothold, and hardened the
-            environment so the issue did not simply return.
+            Not theoretical checklists. These are live business sites — named and
+            verifiable — where we traced the root cause, removed the foothold,
+            and hardened the environment so the issue did not simply return.
+          </p>
+          <p style={{ color: '#a1a1aa', marginTop: '0.75rem' }}>
+            For UK clients, engagements are delivered in partnership with{' '}
+            <a href="https://btlitc.co.uk" target="_blank" rel="noopener noreferrer" style={{ color: '#d4af37', fontWeight: 600 }}>
+              Business Together Limited
+            </a>
+            {' '}(BTLITC), a UK-registered cybersecurity company — the same incident
+            team stands behind every recovery shown here.
           </p>
         </div>
 
