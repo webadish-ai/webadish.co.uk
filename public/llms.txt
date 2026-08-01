@@ -9,6 +9,7 @@ WebAdish is a UK-based WordPress security agency specialising in high-ticket sec
 - Enterprise Security Retainers: Dedicated security team, SLA guarantees, executive reporting. From GBP 2,999/month.
 - Hacked WordPress Site Recovery: Emergency malware removal and site restoration within 4-24 hours. Fixed fee GBP 1,499.
 - WordPress Malware Removal: Targeted malware scanning, removal, and hardening.
+- Google Penalty Recovery: Hacked SEO spam, malicious redirect, browser warning, and malware-related search visibility recovery.
 - Secure Managed WordPress Hosting: High-performance hosting with built-in security layers.
 - Secure WordPress Design: Security-first website design and development.
 
@@ -30,6 +31,7 @@ United Kingdom
 - Maintenance Plans: https://www.webadish.co.uk/wordpress-maintenance-uk
 - Hacked Site Recovery: https://www.webadish.co.uk/hacked-website-recovery-uk
 - Malware Removal: https://www.webadish.co.uk/wordpress-malware-removal
+- Google Penalty Recovery: https://www.webadish.co.uk/google-penalty-recovery
 - Security Retainer: https://www.webadish.co.uk/wordpress-security-retainer
 - Free Security Scanner: https://www.webadish.co.uk/wordpress-security-scanner
 - WooCommerce Hacked Recovery: https://www.webadish.co.uk/woocommerce-store-hacked-recovery

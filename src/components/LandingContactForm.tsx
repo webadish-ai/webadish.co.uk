@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { MessageCircle, Phone } from 'lucide-react';
 import { trackEvent, trackLeadConversion } from '@/lib/tracking';
 import TurnstileField from '@/components/TurnstileField';
 
@@ -32,11 +33,11 @@ export default function LandingContactForm({
     website: '',
     message: '',
     fax_number: '', // honeypot
-    form_started_at: Date.now(),
     turnstile_token: '',
   });
+  const formStartedAtRef = useRef(0);
   const [errorText, setErrorText] = useState('');
-  const [utmParams, setUtmParams] = useState<UTMParams>({
+  const utmParamsRef = useRef<UTMParams>({
     utm_source: '',
     utm_medium: '',
     utm_campaign: '',
@@ -51,7 +52,8 @@ export default function LandingContactForm({
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    setUtmParams({
+    formStartedAtRef.current = Date.now();
+    utmParamsRef.current = {
       utm_source: params.get('utm_source') || '',
       utm_medium: params.get('utm_medium') || '',
       utm_campaign: params.get('utm_campaign') || '',
@@ -60,7 +62,7 @@ export default function LandingContactForm({
       gclid: params.get('gclid') || '',
       landing_page: window.location.pathname,
       referrer: document.referrer || '',
-    });
+    };
   }, []);
 
   const trackFormStart = () => {
@@ -68,7 +70,7 @@ export default function LandingContactForm({
     setHasTrackedStart(true);
     trackEvent('form_start', {
       form_name: 'uk_landing_contact',
-      page_path: utmParams.landing_page || window.location.pathname,
+      page_path: utmParamsRef.current.landing_page || window.location.pathname,
     });
   };
 
@@ -98,10 +100,11 @@ export default function LandingContactForm({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
+          form_started_at: formStartedAtRef.current,
           website: normalizeWebsite(formData.website),
           // /api/contact requires a message of 12+ chars; emergency visitors often skip it
           message: formData.message.trim() || 'Emergency recovery request via landing page — no details provided.',
-          ...utmParams,
+          ...utmParamsRef.current,
         }),
       });
 
@@ -109,32 +112,33 @@ export default function LandingContactForm({
         setStatus('success');
         trackEvent('form_submit_success', {
           form_name: 'uk_landing_contact',
-          page_path: utmParams.landing_page || window.location.pathname,
-          source: utmParams.utm_source || 'direct',
-          medium: utmParams.utm_medium || 'none',
-          campaign: utmParams.utm_campaign || 'none',
+          page_path: utmParamsRef.current.landing_page || window.location.pathname,
+          source: utmParamsRef.current.utm_source || 'direct',
+          medium: utmParamsRef.current.utm_medium || 'none',
+          campaign: utmParamsRef.current.utm_campaign || 'none',
         });
         trackLeadConversion({
           form_name: 'uk_landing_contact',
-          page_path: utmParams.landing_page || window.location.pathname,
-          source: utmParams.utm_source || 'direct',
-          medium: utmParams.utm_medium || 'none',
-          campaign: utmParams.utm_campaign || 'none',
+          page_path: utmParamsRef.current.landing_page || window.location.pathname,
+          source: utmParamsRef.current.utm_source || 'direct',
+          medium: utmParamsRef.current.utm_medium || 'none',
+          campaign: utmParamsRef.current.utm_campaign || 'none',
         });
-        setFormData({ name: '', email: '', phone: '', website: '', message: '', fax_number: '', form_started_at: Date.now(), turnstile_token: '' });
+        setFormData({ name: '', email: '', phone: '', website: '', message: '', fax_number: '', turnstile_token: '' });
+        formStartedAtRef.current = Date.now();
         setHasTrackedStart(false);
       } else {
         setStatus('error');
         trackEvent('form_submit_error', {
           form_name: 'uk_landing_contact',
-          page_path: utmParams.landing_page || window.location.pathname,
+          page_path: utmParamsRef.current.landing_page || window.location.pathname,
         });
       }
     } catch {
       setStatus('error');
       trackEvent('form_submit_error', {
         form_name: 'uk_landing_contact',
-        page_path: utmParams.landing_page || window.location.pathname,
+        page_path: utmParamsRef.current.landing_page || window.location.pathname,
       });
     }
   };
@@ -161,7 +165,7 @@ export default function LandingContactForm({
             href="tel:+447344540450"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: '#ef4444', color: '#fff', fontWeight: 700, padding: '0.6rem 1.2rem', borderRadius: '0.5rem', fontSize: '0.9rem', textDecoration: 'none' }}
           >
-            📞 Call Now
+            <Phone size={16} aria-hidden="true" /> Call Now
           </a>
           <a
             href="https://wa.me/447344540450?text=I%20just%20submitted%20the%20recovery%20form%20and%20my%20site%20is%20actively%20compromised"
@@ -169,7 +173,7 @@ export default function LandingContactForm({
             rel="noopener noreferrer"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: '#16a34a', color: '#fff', fontWeight: 700, padding: '0.6rem 1.2rem', borderRadius: '0.5rem', fontSize: '0.9rem', textDecoration: 'none' }}
           >
-            💬 WhatsApp
+            <MessageCircle size={16} aria-hidden="true" /> WhatsApp
           </a>
         </div>
       </div>
@@ -203,6 +207,7 @@ export default function LandingContactForm({
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <input
             type="text"
+            aria-label="Your name"
             placeholder="Your name"
             required
             value={formData.name}
@@ -222,6 +227,7 @@ export default function LandingContactForm({
           />
           <input
             type="email"
+            aria-label="Email address"
             placeholder="Email address"
             required
             value={formData.email}
@@ -239,6 +245,7 @@ export default function LandingContactForm({
           />
           <input
             type="tel"
+            aria-label="Phone or WhatsApp number"
             placeholder="Phone / WhatsApp (for fastest callback)"
             value={formData.phone}
             onFocus={trackFormStart}
@@ -256,6 +263,7 @@ export default function LandingContactForm({
           <input
             type="text"
             inputMode="url"
+            aria-label="Website URL"
             placeholder="Website URL (example.com)"
             required
             value={formData.website}
@@ -272,6 +280,7 @@ export default function LandingContactForm({
             }}
           />
           <textarea
+            aria-label="What is happening with your site?"
             placeholder="What's happening with your site? (optional)"
             rows={3}
             value={formData.message}

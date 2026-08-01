@@ -43,6 +43,13 @@ export const SERVICE_ROUTES: RouteConfig[] = [
     lastModified: '2026-06-28',
   },
   {
+    path: '/google-penalty-recovery',
+    label: 'Google Penalty Recovery',
+    priority: 0.8,
+    changeFreq: 'monthly',
+    lastModified: '2026-05-08',
+  },
+  {
     path: '/web-hosting-email-services',
     label: 'Secure WordPress Hosting',
     priority: 0.8,

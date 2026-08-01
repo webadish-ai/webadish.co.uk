@@ -106,6 +106,21 @@ export default function PostPage() {
         </ul>
         <p>Any of the above is strong evidence that a backdoor remains active. A surface-level scan using free tools will frequently return clean results even when backdoors are present — these tools compare file hashes against known malware signatures and cannot detect custom or obfuscated backdoors.</p>
 
+        <div style={{ background: 'rgba(239, 68, 68, 0.08)', border: '1px solid rgba(239, 68, 68, 0.35)', borderRadius: '1rem', padding: '1.75rem', margin: '2rem 0' }}>
+          <h3 style={{ color: '#ef4444', marginTop: 0, marginBottom: '0.75rem' }}>⚡ Is your WordPress site re-infected after cleanup?</h3>
+          <p style={{ color: '#e4e4e7', lineHeight: 1.7, marginBottom: '1.25rem' }}>
+            If your website keeps getting hacked every few days or weeks, attackers have left a hidden backdoor in your uploads, database, or server configuration. Free plugin scanners miss obfuscated backdoors.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <Link href="/hacked-website-recovery-uk" className="btn btn-primary" style={{ background: '#ef4444', borderColor: '#ef4444' }}>
+              Request Emergency Recovery (30-Min Response)
+            </Link>
+            <a href="tel:+447344540450" className="btn btn-secondary">
+              📞 Call +44 7344 540450
+            </a>
+          </div>
+        </div>
+
         <h2>How to permanently stop repeat WordPress hacks</h2>
 
         <h3>Step 1: Full forensic cleanup — not just surface malware</h3>

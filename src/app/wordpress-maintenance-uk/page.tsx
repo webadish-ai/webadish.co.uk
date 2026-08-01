@@ -137,7 +137,7 @@ export default function WordPressMaintenanceUK() {
               <span style={{ display: 'inline-block', background: 'rgba(var(--primary-rgb), 0.1)', color: 'var(--primary)', fontSize: '0.8rem', fontWeight: 700, padding: '4px 12px', borderRadius: '20px', marginBottom: '1rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                 WordPress Monitoring UK
               </span>
-              <h2>24/7 WordPress Monitoring — Not Just Uptime Checks</h2>
+              <h2>24/7 WordPress Maintenance & Emergency Monitoring Services UK</h2>
               <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '1rem 0 1.5rem' }}>
                 Most hosting providers offer basic uptime monitoring. Our WordPress maintenance service goes further — monitoring every layer of your site, from server response to file integrity to login security.
               </p>
