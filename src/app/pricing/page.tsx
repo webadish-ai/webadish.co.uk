@@ -7,6 +7,7 @@ import {
 } from '@/lib/schema';
 import PageHeader from '@/components/PageHeader';
 import TrustSignals from '@/components/TrustSignals';
+import BackedByBTLITC from '@/components/BackedByBTLITC';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 
@@ -76,6 +77,8 @@ export default function Pricing() {
       />
 
       <TrustSignals />
+
+      <BackedByBTLITC />
 
       <section
         className="section-padding"

@@ -45,7 +45,7 @@ const BackedByBTLITC = () => {
 
           <p style={{ color: '#e4e4e7', lineHeight: 1.7, margin: 0 }}>
             WebAdish WordPress recovery is delivered in partnership with{' '}
-            <a href="https://btlitc.co.uk" target="_blank" rel="noopener noreferrer" style={{ color: '#d4af37', fontWeight: 700 }}>
+            <a href="https://btlitc.co.uk/services/website-incident-response" target="_blank" rel="noopener noreferrer" style={{ color: '#d4af37', fontWeight: 700 }}>
               Business Together Limited
             </a>
             {' '}(BTLITC), a UK-registered IT &amp; cybersecurity company (no. 9593738)

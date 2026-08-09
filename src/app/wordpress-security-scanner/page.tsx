@@ -1,5 +1,6 @@
 import { ShieldCheck, Zap, Lock, MapPin, UserCheck } from 'lucide-react';
 import Scanner from '@/components/Scanner';
+import BackedByBTLITC from '@/components/BackedByBTLITC';
 import { generatePageMetadata, SITE_URL } from '@/lib/seo';
 import { generateFAQSchema, generateHowToSchema } from '@/lib/schema';
 
@@ -112,6 +113,8 @@ export default function SecurityScannerPage() {
           </div>
         </div>
       </section>
+
+      <BackedByBTLITC />
 
       {/* What it checks */}
       <section style={{ padding: '4rem 0' }}>
